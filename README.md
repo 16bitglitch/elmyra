@@ -2,7 +2,7 @@
 
 Elmyra is a DIY drone synthesizer, inspired by the Soma Lyra-8. It runs on the Adafruit ItsyBitsy M0 Express microcontroller and has added analog distortion and filter. For build documentation and more info, see here: https://neutral-labs.com/elmyra
 
-Elmyra AE Alt Firmware 0.1 by Charles Gershom
+Elmyra AE Alt Firmware 0.1 by @CharlesGershom
 
  I really like the look feel and nearly all of the sound elements of elmyra. Neutral Labs did a great job. 
  The only thing that really bugged me is that the oscillators had a baked in noise element which turned out 
