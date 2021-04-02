@@ -49,7 +49,17 @@ class Oscillator
         index = 0;
         state = -state;
         maxOffset = halfCycleBase / ((OSC_MOD_AMOUNT_MAX + 1) - modAmount);
-        halfCycleCurrent = halfCycleBase - (maxOffset / 2) + random(0, maxOffset + 1);
+
+    if(modAmount>1){
+        halfCycleCurrent = halfCycleBase - (maxOffset / 2) + random(0, modAmount/32 + 1); //Removed cos,, why random? It was hurting my world
+      }
+        else{
+         halfCycleCurrent = halfCycleBase - (maxOffset / 2);
+      }
+
+
+        
+       
       }
 
       if (state < 0)

@@ -237,12 +237,15 @@ static inline void updateInputOscTune(synthCtx *ctx)
   }
   else
   {
-    ctx->osc_tune[0] = POT_TUNE_BASE + getValueFromPotTune(PIN_IN_TUNE_1, &ctx->tune_value[0], POT_DEAD_ZONE_TUNE, SMOOTHING_FACTOR_TUNE) * 100;
-    ctx->osc_tune[1] = POT_TUNE_BASE + getValueFromPotTune(PIN_IN_TUNE_2, &ctx->tune_value[1], POT_DEAD_ZONE_TUNE, SMOOTHING_FACTOR_TUNE) * 100;
-    ctx->osc_tune[2] = POT_TUNE_BASE + getValueFromPotTune(PIN_IN_TUNE_3, &ctx->tune_value[2], POT_DEAD_ZONE_TUNE, SMOOTHING_FACTOR_TUNE) * 100;
+    ctx->osc_tune[0] = 1+ getValueFromPotTune(PIN_IN_TUNE_1, &ctx->tune_value[0], POT_DEAD_ZONE_TUNE, SMOOTHING_FACTOR_TUNE) * 200;
+    ctx->osc_tune[1] = 1+  getValueFromPotTune(PIN_IN_TUNE_2, &ctx->tune_value[1], POT_DEAD_ZONE_TUNE, SMOOTHING_FACTOR_TUNE) * 200;
+    ctx->osc_tune[2] = 1+   getValueFromPotTune(PIN_IN_TUNE_3, &ctx->tune_value[2], POT_DEAD_ZONE_TUNE, SMOOTHING_FACTOR_TUNE) * 200;
+     //ctx->osc_tune[0] = POT_TUNE_BASE + getValueFromPotTune(PIN_IN_TUNE_1, &ctx->tune_value[0], POT_DEAD_ZONE_TUNE, SMOOTHING_FACTOR_TUNE) * 100;
+    //ctx->osc_tune[1] = POT_TUNE_BASE + getValueFromPotTune(PIN_IN_TUNE_2, &ctx->tune_value[1], POT_DEAD_ZONE_TUNE, SMOOTHING_FACTOR_TUNE) * 100;
+   // ctx->osc_tune[2] = POT_TUNE_BASE + getValueFromPotTune(PIN_IN_TUNE_3, &ctx->tune_value[2], POT_DEAD_ZONE_TUNE, SMOOTHING_FACTOR_TUNE) * 100;
   }
-
-  ctx->mod_value = scalePotValue(getValueFromPot(PIN_IN_MOD, &ctx->mod_value_raw, POT_DEAD_ZONE_NORMAL, SMOOTHING_FACTOR_NORMAL), OSC_MOD_AMOUNT_MAX);
+ ctx->mod_value = scalePotValue(getValueFromPot(PIN_IN_MOD, &ctx->mod_value_raw, POT_DEAD_ZONE_NORMAL, SMOOTHING_FACTOR_NORMAL), OSC_MOD_AMOUNT_MAX);
+ 
 }
 
 static inline void updateOutputEnvLED(synthCtx *ctx)
@@ -321,6 +324,7 @@ static inline void updateVoices(synthCtx *ctx)
     ctx->osc[i].setSlew(ctx->osc_slew[i]);
     ctx->osc[i].setFreq(ctx->osc_tune[i]);
     ctx->osc[i].setModAmount(ctx->mod_value);
+  //  ctx->osc[i].setModAmount(0);
     
     if (ctx->env_speed[i] == ENV_BYPASS)
     {

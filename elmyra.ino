@@ -6,6 +6,30 @@
 #include "Oscillator.hpp"
 #include "ioUpdate.hpp"
 
+/*Elmyra AE - Stock firmware Tweak by Charles Gershom
+
+ I really like the look feel and nearly all of the sound elements of elmyra. Neutral Labs did a great job. 
+ The only thing that really bugged me is that the oscillators had a baked in noise element which turned out 
+ to be a random number applied to each sample. Now I love noise, but I also like an element of control. The filter 
+ on this thing is absolutly filthy and I love it. So what i really wanted is some cleaner oscillators that I can 
+ dirty up in a controlled way. Hence the changes below. Playing single clicks and clean purer tones into the delay and 
+ that dirty dirty lovely scratch filter is so much fun. 
+
+ I havent tried these tweaks with sequencer mode as i dont really use it. Some stuff may break, or be weird. 
+
+ Here is a list of changes:
+ 
+*Pitch for each oscillator now cos from ultra low frequency clicks to approx 2x the stock max pitch
+
+*Random oscillator noise was removed by default, and now lives on the Mod Knob. Increase noise along side the usual mod function
+
+*Mod Max values are bigger
+
+*Slew for changes in things such as notes have been dramatically reduced
+
+*/
+
+
 int io_update_countdown, pwm_counter = 0, tmp_sample;
 bool tmp_sample_waiting;
 audioBuffer sampleBuffer;
