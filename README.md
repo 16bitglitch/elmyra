@@ -15,7 +15,7 @@ Elmyra AE Alt Firmware 0.1 by Charles Gershom
 
  Here is a list of changes:
  
-*Pitch for each oscillator now cos from ultra low frequency clicks to approx 2x the stock max pitch
+*Pitch for each oscillator now goes from ultra low frequency clicks to approx 2x the stock max pitch
 
 *Random oscillator noise was removed by default, and now lives on the Mod Knob. Increase noise along side the usual mod function
 
