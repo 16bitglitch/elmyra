@@ -23,5 +23,4 @@ Elmyra AE Alt Firmware 0.1 by @CharlesGershom
 
 *Slew for changes in things such as notes have been dramatically reduced
 
-This is based on the latest stock firmware. 
 
